@@ -16,4 +16,4 @@ Requirements
 ***********************
 Added jQuery sort functionality (has it's downsides but with small tables works ok)
 Added validations to form
-I used a table instead of a list because it I tought it would be more readable
+I used a table instead of a list because it I thought it would be more readable
