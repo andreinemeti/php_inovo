@@ -82,7 +82,10 @@ mysqli_close($conn);
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Add new user</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -118,8 +121,7 @@ mysqli_close($conn);
 				<a href="/inovo/index.php" class="btn btn-default">Back</a>
 			</form>
 
-			<div class="table-responsive">
-		</div> <!-- end table responsive -->
+
 	</div> <!-- end container -->
 		<!-- jQuery -->
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

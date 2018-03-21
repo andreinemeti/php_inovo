@@ -14,7 +14,9 @@ $result = mysqli_query( $conn, $query ); //connecting to the database and submit
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Inovo users</title>
+		<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -34,11 +36,11 @@ $result = mysqli_query( $conn, $query ); //connecting to the database and submit
 			echo "<table class='table table-hover table-bordered'>
 			<thead>
 				<tr>
-					<th>ID</th>
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>Email</th>
-					<th>Phone</th>
+					<th class='sortable' title='Click to sort by id'>ID <span class='glyphicon glyphicon-menu-down'></span></th>
+					<th class='sortable' title='Click to sort alphabetically'>First Name <span class='glyphicon glyphicon-menu-down'></th>
+					<th class='sortable' title='Click to sort alphabetically'>Last Name <span class='glyphicon glyphicon-menu-down'></th>
+					<th class='sortable' title='Click to sort alphabetically'>Email <span class='glyphicon glyphicon-menu-down'></th>
+					<th class='sortable' title='Click to sort alphabetically'>Phone <span class='glyphicon glyphicon-menu-down'></th>
 				</tr>
 			</thead>
 			<tbody>";
@@ -54,7 +56,7 @@ $result = mysqli_query( $conn, $query ); //connecting to the database and submit
 					</tr>";
 			}
 			echo "</tbody>
-			</table";
+			</table>";
 		}else {
 			echo "Whoops! There are no results to $db database." ;
 		}
@@ -63,10 +65,13 @@ $result = mysqli_query( $conn, $query ); //connecting to the database and submit
 		?>
 			</div> <!-- end table responsive -->
 			<a href="/inovo/insert.php" class="btn btn-warning">Add user</a>
+
 		</div> <!-- end container -->
 		<!-- jQuery -->
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<!-- BOOTSTRAP JS -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="script.js"></script>
+
 	</body>
 </html>
