@@ -26,15 +26,15 @@ $phoneError = "";
 			$firstName = validateFormData($_POST["firstname"]); //add the form data 
 		}
 
-		if ( !$_POST["lastname"]) {  // if the input email is empty
+		if ( !$_POST["lastname"]) {  // if the lastname input is empty
 			$lastNameError = "Please enter your last name<br>";
 		} else if (!preg_match("/^[a-zA-Z ]*$/",$_POST["lastname"])) {
 			$lastNameError = "Only letters and white spaces alowed<br>";  
 		} else {
-			$lastName = validateFormData($_POST["lastname"]); 
+			$lastName = validateFormData($_POST["lastname"]); //add the form data 
 		}
 
-		if (!$_POST["email"]) {  
+		if (!$_POST["email"]) { // if the email input is empty 
 			$emailError = "Please enter your email<br>";  
 		} else if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) { 
   			$emailError = "Invalid email format.<br/> Is your e-mail not recognised? <br/>Please contact our technical support team @ +40743547720 | From 10 AM - 6 PM ET <br/> "; 
@@ -42,7 +42,7 @@ $phoneError = "";
 			$email = validateFormData($_POST["email"]); //add the form data 
 		}
 
-		if (!$_POST["phone"]) {  
+		if (!$_POST["phone"]) {  // if the phone input is empty 
 			$phoneError = "Please enter your phone number<br>"; 
 		} else if (!preg_match("/^[0-9*#+]+$/", $_POST["phone"])) { // validate numbers and special characters
 			$phoneError = "Phone number is not valid <br/>";
@@ -50,10 +50,10 @@ $phoneError = "";
 			$phone = validateFormData($_POST["phone"]); //add the form data
 		}
 
-		// if all our variables are validated
+		// if all our inputs are validated
 		if ( $firstName && $lastName && $email && $phone) { 
 			
-			//we check to see if the e-mail already exists in the database
+			//we check to see if the e-mail already exists in the database (it can be extended to phone number too)
 			$query = mysqli_query($conn, "SELECT * FROM Users WHERE email='".$email."'");
 
 			if(mysqli_num_rows($query) > 0){
