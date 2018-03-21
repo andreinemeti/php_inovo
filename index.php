@@ -40,7 +40,8 @@ $result = mysqli_query( $conn, $query ); //connecting to the database and submit
 					<th>Email</th>
 					<th>Phone</th>
 				</tr>
-				</thead>";
+			</thead>
+			<tbody>";
 
 			//while looping trough this associative array
 			while( $row = mysqli_fetch_assoc($result)) { 
@@ -52,7 +53,8 @@ $result = mysqli_query( $conn, $query ); //connecting to the database and submit
 						<td> ". $row["phone"] ." </td>
 					</tr>";
 			}
-			echo "</table";
+			echo "</tbody>
+			</table";
 		}else {
 			echo "Whoops! There are no results to $db database." ;
 		}
