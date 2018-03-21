@@ -1,5 +1,7 @@
 <?php 
-include('connection.php'); 
+include('includes/connection.php'); 
+include('includes/header.php');
+
 $firstNameError = "";
 $lastNameError = "";
 $emailError = "";
@@ -55,8 +57,8 @@ $phoneError = "";
 			$query = mysqli_query($conn, "SELECT * FROM Users WHERE email='".$email."'");
 
 			if(mysqli_num_rows($query) > 0){
-
     			echo "<div class='alert alert-danger'>Error! The email already exists in our database.</div>";
+
     	// if everything is ok, we add the new user to our Inovo Users DB
 		} else {
 			$query = "INSERT INTO users (id, firstname, lastname, email, phone) VALUES (NULL, '$firstName', '$lastName', '$email', '$phone')";
@@ -74,28 +76,11 @@ $phoneError = "";
 //making sure we are closing the connection for security reasons 
 mysqli_close($conn);
 ?>
-
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Add new user</title>
-		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-		<link rel="stylesheet" href="style.css">
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-	</head>
-	<body>
-		<div class="container">
+<body>
+	<div class="container">
+		<div class="form-container">
 			<h1>Add a new user</h1>
+			<hr/>
 			<p class="text-danger">* Field marked with * are required</p>
 			<form action="<?php echo htmlspecialchars ( $_SERVER["PHP_SELF"] ); ?>" method="post"> 
 
@@ -113,19 +98,16 @@ mysqli_close($conn);
 
 				<small class="text-danger">* <?php echo $phoneError; ?></small>
 				<input type="text" placeholder="Phone number" name="phone" maxlength="25" required>
-
 				<br/><br/>
-
 
 				<input type="submit" class="btn btn-warning" name="add" value="Add user">
 				<a href="/inovo/index.php" class="btn btn-default">Back</a>
 			</form>
-
-
+		</div>
 	</div> <!-- end container -->
-		<!-- jQuery -->
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-		<!-- BOOTSTRAP JS -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<br/>	
+<?php 
+include('includes/footer.php'); 
+?>
 	</body>
 </html>

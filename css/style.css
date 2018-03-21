@@ -1,0 +1,68 @@
+body {
+  font-family: 'Poppins', sans-serif;
+
+}
+
+
+.table-hover thead tr {
+  background:#6c7ae0;
+  color:white;
+  cursor:pointer;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #ececff;
+}
+
+.btn-warning, .btn-default {
+  position:relative;
+  box-shadow: 5px 8.7px 20px #ccc;
+  transition:.3s all;
+}
+
+.btn-warning {
+  background:#6c7ae0;
+  border:1px solid #6c7ae0;
+}
+.btn-warning:hover, .btn-warning:focus, .btn-warning:focus:hover, .btn-warning:active:focus {
+  background:transparent;
+  color:#6c7ae0;
+  border:1px solid #6c7ae0;
+  outline:none;
+}
+
+.btn-warning:active {
+  bottom:2px;
+
+}
+
+.btn-danger, .btn-default {
+  position:relative;
+  box-shadow: 5px 8.7px 20px #ccc;
+  transition:.3s all;
+}
+
+.btn-default {
+  margin-left:45px;
+}
+
+.btn-default:active {
+  bottom:2px;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:focus:hover, .btn-default:active:focus {
+  background:#EAE6E6;
+  color:black;
+  border:1px solid #ccc;
+  outline:none;
+}
+
+.form-container {
+    max-width:400px;
+    margin-top:45px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, .3), 0 15px 12px rgba(0, 0, 0, .1);
+    padding: 25px 25px 30px 25px;
+    border: 1px solid #1800ff;
+    border-radius:10px;
+
+}
